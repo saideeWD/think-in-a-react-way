@@ -6,6 +6,7 @@ import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Invoices from "./components/Invoices/Invoices";
 import Expenses from "./components/Expenses/Expenses";
+import Bills from "./components/Bills/Bills";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -13,8 +14,18 @@ root.render(
     <Routes>
       <Route path="/" element={<App />}>
         <Route path="/invoices" element={<Invoices />}>
+          <Route
+            index
+            element={
+              <main className="text-center py-5">
+                <h1>Sleact i invoice </h1>
+              </main>
+            }
+          ></Route>
+          <Route path=":invoiceld" element={<Bills />}></Route>
           {/* <Route path='/invoices/:123' element={<div>Bills</div>}/> */}
         </Route>
+
         <Route path="/expenses" element={<Expenses />} />
       </Route>
       <Route

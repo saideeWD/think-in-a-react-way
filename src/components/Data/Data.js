@@ -1,4 +1,4 @@
-let invoices=[
+let invoices = [
   {
     id: 1,
     name: "Galapagos sea lion",
@@ -140,7 +140,9 @@ let invoices=[
     amount: "41069",
   },
 ];
-export function getInvoices(){
+export function getInvoices() {
   return invoices;
-    
+}
+export function getInvoice(number) {
+  return invoices.find((invoice) => invoice.number === number);
 }
